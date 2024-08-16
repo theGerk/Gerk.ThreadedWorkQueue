@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net45;net47</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Benji Altman</Authors>
+		<Description>Enqueues work that runs on a seperate thread.</Description>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Concurency</PackageTags>
+		<NeutralLanguage></NeutralLanguage>
+		<Version>1.0.0</Version>
+		<PackageId>Gerk.ThreadedWorkQueue</PackageId>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+</Project>
