@@ -64,7 +64,7 @@ namespace Gerk.ThreadedWorkQueue
 		/// <returns>The <typeparamref name="PassAhead"/> object.</returns>
 		virtual protected PassAhead InitializePassAhead() { return default; }
 
-		internal override async void ThreadFunc()
+		internal override void ThreadFunc()
 		{
 			for (; ; )
 			{
@@ -76,7 +76,7 @@ namespace Gerk.ThreadedWorkQueue
 						DigestItem(item, ref passAlong);
 					}
 				} while (!internalQueue.IsEmpty);
-				FlushBuffer(passAlong).RunSynchronously();
+				FlushBuffer(passAlong).Wait();
 				if (EndThreadIfNeeded())
 					break;
 			}
