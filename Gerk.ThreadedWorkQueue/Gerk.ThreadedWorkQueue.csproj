@@ -4,9 +4,9 @@
 		<TargetFrameworks>net8.0;net45;net47</TargetFrameworks>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Authors>Benji Altman</Authors>
-		<Description>Enqueues work that runs on a seperate thread.</Description>
+		<Description>Enqueues work that runs on a separate thread.</Description>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>Concurency</PackageTags>
+		<PackageTags>Concurrency</PackageTags>
 		<NeutralLanguage></NeutralLanguage>
 		<Version>2.1.2</Version>
 		<PackageId>Gerk.ThreadedWorkQueue</PackageId>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace Gerk.ThreadedWorkQueue
 {
 	/// <summary>
-	/// Can be passed elements of <typeparamref name="T"/> and will use a single thread to execute <see cref="DigestItem(T)"/> function on each item. The thread will only be spun up when work is enqueued and will exist until all work is complete at which point it will exit. Sometimes like in the case of writing to a file a "flush" might be useful so the <see cref="FlushBuffer"/> can be overriden to have any logic that should happen infrequently when a batch of items are done being procesesed.
+	/// Can be passed elements of <typeparamref name="T"/> and will use a single thread to execute <see cref="DigestItem(T)"/> function on each item. The thread will only be spun up when work is enqueued and will exist until all work is complete at which point it will exit. Sometimes like in the case of writing to a file a "flush" might be useful so the <see cref="FlushBuffer"/> can be overridden to have any logic that should happen infrequently when a batch of items are done being processed.
 	/// </summary>
 	/// <typeparam name="T">A type to be put into the queue and consumed.</typeparam>
 	public abstract class ThreadedWorkQueue<T> : ThreadedWorkQueueBase<T>
@@ -41,7 +41,7 @@ namespace Gerk.ThreadedWorkQueue
 	}
 
 	/// <summary>
-	/// Can be passed elements of <typeparamref name="T"/> and will use a single thread to execute <see cref="DigestItem(T, ref PassAhead)"/> function on each item. The thread will only be spun up when work is enqueued and will exist until all work is complete at which point it will exit. Sometimes like in the case of writing to a file a "flush" might be useful so the <see cref="FlushBuffer"/> can be overriden to have any logic that should happen infrequently when a batch of items are done being procesesed.
+	/// Can be passed elements of <typeparamref name="T"/> and will use a single thread to execute <see cref="DigestItem(T, ref PassAhead)"/> function on each item. The thread will only be spun up when work is enqueued and will exist until all work is complete at which point it will exit. Sometimes like in the case of writing to a file a "flush" might be useful so the <see cref="FlushBuffer"/> can be overridden to have any logic that should happen infrequently when a batch of items are done being processed.
 	/// </summary>
 	/// <typeparam name="T">A type to be put into the queue and consumed.</typeparam>
 	/// <typeparam name="PassAhead">A type to hold information that is passed between calls of <see cref="DigestItem(T, ref PassAhead)"/> and <see cref="FlushBuffer(PassAhead)"/>. The first call of <see cref="DigestItem(T, ref PassAhead)"/> after a <see cref="FlushBuffer(PassAhead)"/> will always be <see langword="default"/>.</typeparam>
