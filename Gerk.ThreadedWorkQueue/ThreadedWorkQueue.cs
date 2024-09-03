@@ -76,7 +76,7 @@ namespace Gerk.ThreadedWorkQueue
 						DigestItem(item, ref passAlong);
 					}
 				} while (!internalQueue.IsEmpty);
-				FlushBuffer(passAlong).Wait();
+				FlushBuffer(passAlong);
 				if (EndThreadIfNeeded())
 					break;
 			}
