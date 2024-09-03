@@ -57,7 +57,7 @@ namespace Gerk.ThreadedWorkQueue
 		/// Defaults to nothing. <see langword="override"/> to define logic that is run infrequently when the queue empties.
 		/// </summary>
 		/// <param name="passAhead">The <typeparamref name="PassAhead"/> that has been being passed along through <see cref="DigestItem(T, ref PassAhead)"/> since the last call of <see cref="FlushBuffer(PassAhead)"/>.</param>
-		virtual protected Task FlushBuffer(PassAhead passAhead) { return Task.FromResult(true); }
+		virtual protected void FlushBuffer(PassAhead passAhead) { }
 		/// <summary>
 		/// Defaults to returning <see langword="default"/>. Override to define how the <typeparamref name="PassAhead"/> is going to be initialized when needed.
 		/// </summary>
